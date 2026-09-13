@@ -1,0 +1,80 @@
+{
+  "code": "NC",
+  "name": "North Carolina",
+  "incomeTax": {
+    "value": {
+      "kind": "flat",
+      "base": "federalAGI",
+      "rate": 0.0399,
+      "standardDeduction": {
+        "single": 12750,
+        "marriedJoint": 25500,
+        "marriedSeparate": 12750,
+        "headOfHousehold": 19125
+      }
+    },
+    "source": "https://www.ncdor.gov/taxes-forms/individual-income-tax",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: NC has legislated scheduled rate REDUCTIONS (4.25% → 3.99% → lower), some contingent on revenue triggers. Verify the rate for the actual tax year before relying on it. Unlike CO, NC starts from federal AGI and applies its own standard deduction."
+  },
+  "propertyFramework": {
+    "value": {
+      "assessment": {
+        "residentialAssessmentRatio": 1,
+        "revaluationCycleYears": 4
+      },
+      "statewideExemptions": [
+        {
+          "id": "nc-elderly-disabled-exclusion",
+          "label": "Elderly/disabled homestead exclusion (greater of $25k or 50%)",
+          "amount": {
+            "kind": "percentOfValue",
+            "percent": 0.5,
+            "floor": 25000
+          },
+          "appliesTo": [],
+          "requiresHomestead": true,
+          "eligibility": "age65Plus"
+        }
+      ]
+    },
+    "source": "https://www.ncdor.gov/taxes-forms/property-tax",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: revaluation cycle is county-set (4–8 yrs). Revaluation years produce large one-time jumps because there is no cap to smooth them — model this explicitly."
+  },
+  "stateSalesTax": {
+    "value": {
+      "jurisdiction": "State of North Carolina",
+      "rate": 0.0475,
+      "exemptCategories": [
+        "groceries",
+        "prescriptionDrugs",
+        "services"
+      ]
+    },
+    "source": "https://www.ncdor.gov/taxes-forms/sales-and-use-tax",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null
+  },
+  "vehicle": {
+    "value": {
+      "tax": {
+        "kind": "annualValueBased",
+        "label": "Tag & Tax (vehicle property tax)",
+        "basis": "marketValue",
+        "rateByAgeYears": [
+          0.0125
+        ],
+        "annualRegistration": 38.75
+      },
+      "purchaseSalesTaxRate": 0.03,
+      "oneTimeTitleAndFees": 56
+    },
+    "source": "https://www.ncdot.gov/dmv/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: NC charges a 3% Highway Use Tax at purchase INSTEAD of sales tax, plus an annual vehicle property tax at local rates. Both are easy to miss."
+  }
+}

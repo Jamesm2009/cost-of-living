@@ -1,0 +1,107 @@
+{
+  "code": "FL",
+  "name": "Florida",
+  "incomeTax": {
+    "value": {
+      "kind": "none"
+    },
+    "source": "https://floridarevenue.com/taxes/",
+    "effectiveDate": "1900-01-01",
+    "verifiedOn": null,
+    "note": "No individual income tax; constitutionally prohibited."
+  },
+  "propertyFramework": {
+    "value": {
+      "assessment": {
+        "residentialAssessmentRatio": 1,
+        "revaluationCycleYears": 1
+      },
+      "valueCap": {
+        "label": "Save Our Homes",
+        "maxAnnualIncrease": 0.03,
+        "requiresHomestead": true,
+        "portable": true,
+        "resetsOnTransfer": true
+      },
+      "statewideExemptions": [
+        {
+          "id": "fl-homestead-banded",
+          "label": "Homestead exemption ($25k all levies; $50k–$75k band non-school only)",
+          "amount": {
+            "kind": "bandedFixed",
+            "bands": [
+              {
+                "from": 0,
+                "to": 25000,
+                "exempt": true
+              },
+              {
+                "from": 25000,
+                "to": 50000,
+                "exempt": false
+              },
+              {
+                "from": 50000,
+                "to": 75000,
+                "exempt": true
+              }
+            ]
+          },
+          "appliesTo": [
+            "county",
+            "municipal",
+            "special"
+          ],
+          "requiresHomestead": true,
+          "eligibility": "general",
+          "inflationIndexed": true
+        },
+        {
+          "id": "fl-homestead-school",
+          "label": "Homestead exemption, school levies (first $25k only)",
+          "amount": {
+            "kind": "fixed",
+            "amount": 25000
+          },
+          "appliesTo": [
+            "school"
+          ],
+          "requiresHomestead": true,
+          "eligibility": "general"
+        }
+      ]
+    },
+    "source": "https://floridarevenue.com/property/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: Amendment 5 (2024) indexes the $50k–$75k band to inflation — the band ceiling is no longer exactly $75,000. Verify the current indexed figure."
+  },
+  "stateSalesTax": {
+    "value": {
+      "jurisdiction": "State of Florida",
+      "rate": 0.06,
+      "exemptCategories": [
+        "groceries",
+        "prescriptionDrugs",
+        "services"
+      ]
+    },
+    "source": "https://floridarevenue.com/taxes/taxesfees/Pages/sales_tax.aspx",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null
+  },
+  "vehicle": {
+    "value": {
+      "tax": {
+        "kind": "none",
+        "annualRegistration": 75
+      },
+      "purchaseSalesTaxRate": 0.06,
+      "oneTimeTitleAndFees": 225
+    },
+    "source": "https://www.flhsmv.gov/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: FL charges a large one-time new-resident/new-vehicle registration fee (~$225) but NO annual value-based vehicle tax — the mirror image of CO and NC."
+  }
+}
