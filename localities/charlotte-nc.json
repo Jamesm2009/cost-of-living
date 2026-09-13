@@ -1,0 +1,85 @@
+{
+  "id": "charlotte-nc",
+  "city": "Charlotte",
+  "county": "Mecklenburg",
+  "state": "NC",
+  "localIncomeTax": {
+    "value": {
+      "kind": "none"
+    },
+    "source": "https://www.ncdor.gov/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null
+  },
+  "localSalesTax": {
+    "value": [
+      {
+        "jurisdiction": "Mecklenburg County",
+        "rate": 0.02,
+        "exemptCategories": [
+          "groceries",
+          "prescriptionDrugs",
+          "services"
+        ]
+      },
+      {
+        "jurisdiction": "Public Transit (Article 43)",
+        "rate": 0.005,
+        "exemptCategories": [
+          "groceries",
+          "prescriptionDrugs",
+          "services"
+        ]
+      },
+      {
+        "jurisdiction": "Local food tax",
+        "rate": 0.02,
+        "exemptCategories": [],
+        "onlyCategories": [
+          "groceries"
+        ]
+      }
+    ],
+    "source": "https://www.ncdor.gov/taxes-forms/sales-and-use-tax/sales-and-use-tax-rates-other-information",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: verify rates. The grocery handling is the notable structural difference from TX/CO/FL — NC groceries are NOT fully exempt."
+  },
+  "propertyLevies": {
+    "value": [
+      {
+        "jurisdiction": "Mecklenburg County",
+        "levyClass": "county",
+        "rate": {
+          "value": 0.4737,
+          "unit": "perHundred"
+        }
+      },
+      {
+        "jurisdiction": "City of Charlotte",
+        "levyClass": "municipal",
+        "rate": {
+          "value": 0.2558,
+          "unit": "perHundred"
+        }
+      }
+    ],
+    "source": "https://www.mecknc.gov/AssessorsOffice/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: UNVERIFIED. Note NC has NO separate school levy — schools are county-funded, so the school class is empty and county rates are correspondingly higher. Do not read a low \"school\" line as a saving."
+  },
+  "localExemptions": {
+    "value": [],
+    "source": "https://www.mecknc.gov/AssessorsOffice/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null
+  },
+  "supplementalDistricts": {
+    "value": [],
+    "source": "manual",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "Municipal service districts exist in parts of Charlotte. Parcel-specific."
+  }
+}
