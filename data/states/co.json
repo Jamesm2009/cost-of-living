@@ -1,0 +1,88 @@
+{
+  "code": "CO",
+  "name": "Colorado",
+  "incomeTax": {
+    "value": {
+      "kind": "flat",
+      "base": "federalTaxableIncome",
+      "rate": 0.044,
+      "standardDeduction": {
+        "single": 0,
+        "marriedJoint": 0,
+        "marriedSeparate": 0,
+        "headOfHousehold": 0
+      },
+      "surplusRebate": {
+        "label": "TABOR surplus refund",
+        "estimatedAnnual": 0
+      }
+    },
+    "source": "https://tax.colorado.gov/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": "2026-09-12",
+    "note": "Flat 4.4% (Prop 121, 2022). No local income tax on wages. TABOR can temporarily reduce the effective rate in surplus years — set estimatedAnnual per year, do not adjust `rate`."
+  },
+  "propertyFramework": {
+    "value": {
+      "assessment": {
+        "residentialAssessmentRatio": 0.0625,
+        "revaluationCycleYears": 2
+      },
+      "statewideExemptions": [
+        {
+          "id": "co-senior-homestead",
+          "label": "Senior property tax exemption (50% of first $200k)",
+          "amount": {
+            "kind": "percentOfValue",
+            "percent": 0.5,
+            "cap": 100000
+          },
+          "appliesTo": [],
+          "requiresHomestead": true,
+          "eligibility": "age65Plus"
+        }
+      ]
+    },
+    "source": "https://cdola.colorado.gov/property-taxation",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: assessment ratio has moved repeatedly (SB24-233 and successors) and differs slightly between school and non-school levies. VERIFY — this single number drives the entire CO property result. No general growth cap exists."
+  },
+  "stateSalesTax": {
+    "value": {
+      "jurisdiction": "State of Colorado",
+      "rate": 0.029,
+      "exemptCategories": [
+        "groceries",
+        "prescriptionDrugs",
+        "services"
+      ]
+    },
+    "source": "https://tax.colorado.gov/sales-use-tax",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": "2026-09-12"
+  },
+  "vehicle": {
+    "value": {
+      "tax": {
+        "kind": "annualValueBased",
+        "label": "Specific Ownership Tax",
+        "basis": "msrp",
+        "rateByAgeYears": [
+          0.021,
+          0.015,
+          0.012,
+          0.009,
+          0.0045
+        ],
+        "annualRegistration": 90
+      },
+      "purchaseSalesTaxRate": 0.029,
+      "oneTimeTitleAndFees": 50
+    },
+    "source": "https://dmv.colorado.gov/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: schedule shape is right; confirm exact percentages. This meaningfully offsets CO low real-property tax for newer vehicles."
+  }
+}
