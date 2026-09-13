@@ -1,0 +1,103 @@
+{
+  "id": "colorado-springs-co",
+  "city": "Colorado Springs",
+  "county": "El Paso",
+  "state": "CO",
+  "localIncomeTax": {
+    "value": {
+      "kind": "none"
+    },
+    "source": "https://coloradosprings.gov/finance-sales-tax",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": "2026-09-12",
+    "note": "No Occupational Privilege Tax here. Denver, Aurora, Greenwood Village, Glendale and Sheridan DO levy one — use kind: \"headTax\" if you add those cities."
+  },
+  "localSalesTax": {
+    "value": [
+      {
+        "jurisdiction": "El Paso County",
+        "rate": 0.0123,
+        "exemptCategories": [
+          "groceries",
+          "prescriptionDrugs",
+          "services"
+        ]
+      },
+      {
+        "jurisdiction": "City of Colorado Springs",
+        "rate": 0.0307,
+        "exemptCategories": [
+          "groceries",
+          "prescriptionDrugs",
+          "services"
+        ]
+      },
+      {
+        "jurisdiction": "Pikes Peak Rural Transportation Authority",
+        "rate": 0.01,
+        "exemptCategories": [
+          "groceries",
+          "prescriptionDrugs",
+          "services"
+        ]
+      }
+    ],
+    "source": "https://coloradosprings.gov/finance-sales-tax/page/sales-tax-faq",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": "2026-09-12",
+    "note": "Totals 8.20% with the 2.9% state rate. Aggregators disagree (8.0% vs 8.2%) — city source used. City exempts food for home consumption from its 3.07%."
+  },
+  "propertyLevies": {
+    "value": [
+      {
+        "jurisdiction": "School District (varies: D-11 / D-20 / D-49)",
+        "levyClass": "school",
+        "rate": {
+          "value": 45,
+          "unit": "mills"
+        }
+      },
+      {
+        "jurisdiction": "El Paso County",
+        "levyClass": "county",
+        "rate": {
+          "value": 7.5,
+          "unit": "mills"
+        }
+      },
+      {
+        "jurisdiction": "City of Colorado Springs",
+        "levyClass": "municipal",
+        "rate": {
+          "value": 4.3,
+          "unit": "mills"
+        }
+      },
+      {
+        "jurisdiction": "Other districts (fire, library, PPRTA)",
+        "levyClass": "special",
+        "rate": {
+          "value": 8,
+          "unit": "mills"
+        }
+      }
+    ],
+    "source": "https://assessor.elpasoco.com/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "TODO: UNVERIFIED placeholders. Mill levy varies materially by school district within the city — D-11, D-20 and D-49 are NOT interchangeable. Pull the actual levy for the target address."
+  },
+  "localExemptions": {
+    "value": [],
+    "source": "https://assessor.elpasoco.com/",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null
+  },
+  "supplementalDistricts": {
+    "value": [],
+    "source": "manual",
+    "effectiveDate": "2026-01-01",
+    "verifiedOn": null,
+    "note": "Metro districts are common in newer Colorado Springs subdivisions and can add 10–60 mills. Parcel-specific; enter manually."
+  }
+}
